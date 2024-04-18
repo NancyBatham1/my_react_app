@@ -1,9 +1,12 @@
 import Header from './components/Header';
-import {TodoItem} from './components/TodoItem';
+//import {TodoItem} from './components/TodoItem';
 import Footer from './components/Footer';
 import Todos from './components/Todos';
 
 function App() {
+  const onDelete=(mytodo)=>{
+alert(mytodo.sno);
+  }
   let todolist=[
     {
       sno:1,
@@ -16,7 +19,8 @@ function App() {
       title:'title2',
       desc:'desc2',
 
-    }, {
+    }, 
+    {
       sno:3,
       title:'title3',
       desc:'desc3',
@@ -26,7 +30,7 @@ function App() {
   return (
     <>
       <Header logo='MyReact'  />
-      <Todos todo={todolist} />
+      <Todos todo={todolist} onDelete={onDelete} />
       <Footer />
     </> 
   );
