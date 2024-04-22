@@ -2,12 +2,15 @@ import Header from './components/Header';
 //import {TodoItem} from './components/TodoItem';
 import Footer from './components/Footer';
 import Todos from './components/Todos';
+import React,{useState} from 'react';
 
 function App() {
   const onDelete=(mytodo)=>{
-alert(mytodo.sno);
+    setTodos(todolist.filter((e)=>{
+     return e!==mytodo
+    }))
   }
-  let todolist=[
+  let [todolist, setTodos]=useState([
     {
       sno:1,
       title:'title1',
@@ -26,7 +29,9 @@ alert(mytodo.sno);
       desc:'desc3',
 
     },
-  ]
+    
+  ]);
+
   return (
     <>
       <Header logo='MyReact'  />
