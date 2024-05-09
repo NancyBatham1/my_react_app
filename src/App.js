@@ -41,15 +41,15 @@ function App() {
     //console.log(mytodo);
     setTodos([...todolist, mytodo]);
     alert("Todo added successfully");
-    localStorage.setItem("todolist", JSON.stringify(todolist));
+   // localStorage.setItem("todolist", JSON.stringify(todolist));
   
   };
 
   let [todolist, setTodos] = useState(initTodo);
 
-  // useEffect(() => {
-  //   localStorage.setItem("todolist", JSON.stringify(todolist));
-  // }, [todolist]);
+  useEffect(() => {
+    localStorage.setItem("todolist", JSON.stringify(todolist));
+  }, [todolist]);
   return (
     <>
       <Header logo="MyReact" />
